@@ -41,7 +41,6 @@ Welcome to **Speculative Listening**! 👋 This repository accompanies *"Decode 
     * [5. Reproduction](#reproduction)
 * [✨ How It Works](#how-it-works)
 * [📊 Results](#results)
-* [🗂️ Project Structure](#project-structure)
 * [🌱 Acknowledgements](#acknowledgements)
 * [📚 Citation](#citation)
 
@@ -226,41 +225,6 @@ the two models that issue tool calls), wall clock, one A100 80 GB. Full table an
 Across the four models, Speculative Listening speeds up speak chunks by 2.6-2.8x on average and tool-call
 chunks by up to 23.4x, reduces the decoding delay before a response starts by 73% on average (to 74-241 ms),
 and reduces the maximum lag behind real time by 94.4%.
-
-## 🗂️ Project Structure <span id="project-structure"></span>
-
-```plaintext
-├── speclisten/
-│   ├── infer/speculator.py          Speculator: verification inside the runtime's feed; PLD, Token Recycling, lookahead, idle lookup
-│   ├── eval/
-│   │   ├── replay_slm.py            replay driver for the Streaming SLM (silence draft, pool, runner-up branch, timing)
-│   │   ├── replay_minicpmo.py       replay driver for the MiniCPM-o-based targets (Gander, Realtime-Venus, LWS)
-│   │   ├── report.py                per-chunk statistics, session-bootstrap confidence intervals, acceptance rates
-│   │   ├── analyses.py              every table of the paper from the run directories
-│   │   └── judge.py                 response quality with an LLM judge (VoiceBench rubric)
-│   ├── models/
-│   │   ├── minicpmo_runtimes.py     the released runtimes as replay targets; session snapshot / restore
-│   │   ├── lws.py                   LWS's demo runtime driven unit by unit
-│   │   └── slm_talker.py            Streaming SLM Talker + Token2wav for MODE=talker
-│   ├── bench/
-│   │   ├── sessions.py              session builder from the public sources
-│   │   └── calibrate.py             cost table of the calibrated clock (Streaming SLM)
-│   └── utils/paths.py               the only place that knows where models and data live
-├── config/eval/
-│   ├── local.example.yaml           copy to local.yaml (untracked)
-│   ├── cost_models/                 calibrated forward costs, A100 80 GB, one table per target
-│   └── sessions/                    manifests of the eight tasks
-├── scripts/evaluate/
-│   ├── run.sh                       one replay job (wall clock / calibrated clock / with Talker)
-│   ├── queue.sh                     job queue, one lane per GPU
-│   ├── jobs/                        every run of the paper: main_table.txt, ablation.txt, sampling.txt
-│   ├── compare_runs.py              chunk-by-chunk comparison of two runs
-│   ├── lag_audit.py                 per-chunk lag audit
-│   └── wall_vs_clock.py             wall-clock vs calibrated-clock gap of paired chunks
-├── envs/                            the three runtime environments
-├── docs/                            BENCH.md, DATA.md, LEADERBOARD.md, REPRODUCTION.md
-└── tests/test_speculator.py         every method is lossless on a toy model (CPU)
-```
 
 ## 🌱 **Acknowledgements** <span id="acknowledgements"></span>
 

@@ -1,0 +1,3 @@
+# Speculative sampling (Streaming SLM, FDB v3): greedy drafts verified by speculative sampling at temperatures
+# 0.3, 0.7 and 1.0 (suffix _t<NN>); AR sampled at the same temperature is the reference.
+slm sampling_slm_fdbv3 4 config/eval/sessions/fdbv3.jsonl ar_t30,self_silence_h_b_t30,ar_t70,self_silence_h_b_t70,ar_t100,self_silence_h_b_t100

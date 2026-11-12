@@ -1,0 +1,8 @@
+# Oracle probe for the acceptance rate: every chunk decoded twice from the same state, under silence (no budget)
+# and with the real audio. Llama Questions for all chunk types; FDB v3 for tool-call chunks.
+gander gander_oracle_llamaq 8 config/eval/sessions/llamaq.jsonl self_silence_u
+gander gander_oracle_fdbv3 5 config/eval/sessions/fdbv3.jsonl self_silence_u
+venus venus_oracle_llamaq 5 config/eval/sessions/llamaq.jsonl self_silence_u
+lws lws_oracle_llamaq 5 config/eval/sessions/llamaq.jsonl self_silence_u
+slm slm_oracle_llamaq 2 config/eval/sessions/llamaq.jsonl self_silence_u
+slm slm_oracle_fdbv3 2 config/eval/sessions/fdbv3.jsonl self_silence_u

@@ -1,0 +1,26 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Environments
+.venv/
+venv/
+.env
+
+# Tests / tooling
+.pytest_cache/
+.ruff_cache/
+.agents/
+.claude/
+skills-lock.json
+
+# Local configuration and results (never committed)
+config/eval/local.yaml
+outputs/
+logs/
+sessions/

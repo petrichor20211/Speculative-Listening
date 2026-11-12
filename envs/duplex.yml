@@ -1,0 +1,17 @@
+# Streaming SLM (speclisten.targets.slm). The model code itself comes from duplex_repo in the config.
+name: duplex
+channels: [conda-forge]
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.10.0
+      - transformers==4.57.6
+      - flash-attn==2.8.3.post1   # builds against torch: install it in a second pip step if no wheel matches
+      - numpy==1.26.4
+      - soundfile==0.14.0
+      - omegaconf==2.3.0
+      - safetensors==0.8.0
+      - pyyaml
+      - scipy

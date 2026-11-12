@@ -1,0 +1,6 @@
+# Ablation: the components of Speculative Listening added one by one. AR and the full method come from the
+# main-table runs; these runs add the silence-hypothesis draft alone and with the hypothesis pool.
+gander abl_gander_llamaq 8 config/eval/sessions/llamaq.jsonl self_silence,self_silence_h
+gander abl_gander_fdbv3 5 config/eval/sessions/fdbv3.jsonl self_silence,self_silence_h
+slm abl_slm_llamaq 2 config/eval/sessions/llamaq.jsonl self_silence,self_silence_h
+slm abl_slm_fdbv3 2 config/eval/sessions/fdbv3.jsonl self_silence,self_silence_h

@@ -1,0 +1,17 @@
+# Gander and Realtime-Venus (speclisten.targets.gander, speclisten.targets.venus), the releases' own stack.
+name: realtime-venus
+channels: [conda-forge]
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.4.0
+      - transformers==4.51.3
+      - numpy==1.26.4
+      - soundfile==0.12.1
+      - librosa==0.9.0
+      - safetensors==0.8.0
+      - pyyaml
+      - scipy
+      # plus the requirements of Realtime-Venus (venus_repo) and of the Gander runtime (gander_repo)

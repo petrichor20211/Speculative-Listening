@@ -1,0 +1,34 @@
+# Main table: 4 models x 8 tasks, AR, the three baselines and Speculative Listening; one lane per GPU.
+# Line format: <target> <run> <nshards> <sessions.jsonl> <methods>
+gander gander_llamaq 8 config/eval/sessions/llamaq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+gander gander_fdbv3 5 config/eval/sessions/fdbv3.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+gander gander_fdbv15 5 config/eval/sessions/fdbv15.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+gander gander_fdbv1 5 config/eval/sessions/fdbv1.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+gander gander_alpaca 5 config/eval/sessions/alpaca.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+gander gander_triviaqa 5 config/eval/sessions/triviaqa.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+gander gander_webq 5 config/eval/sessions/webq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+gander gander_bba 3 config/eval/sessions/bba.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_llamaq 5 config/eval/sessions/llamaq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_fdbv3 5 config/eval/sessions/fdbv3.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_fdbv15 5 config/eval/sessions/fdbv15.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_fdbv1 5 config/eval/sessions/fdbv1.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_alpaca 5 config/eval/sessions/alpaca.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_triviaqa 5 config/eval/sessions/triviaqa.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_webq 5 config/eval/sessions/webq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+lws lws_bba 3 config/eval/sessions/bba.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_llamaq 5 config/eval/sessions/llamaq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_fdbv3 5 config/eval/sessions/fdbv3.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_fdbv15 5 config/eval/sessions/fdbv15.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_fdbv1 5 config/eval/sessions/fdbv1.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_alpaca 5 config/eval/sessions/alpaca.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_triviaqa 5 config/eval/sessions/triviaqa.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_webq 5 config/eval/sessions/webq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+venus venus_bba 3 config/eval/sessions/bba.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_llamaq 2 config/eval/sessions/llamaq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_fdbv3 2 config/eval/sessions/fdbv3.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_fdbv15 2 config/eval/sessions/fdbv15.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_fdbv1 2 config/eval/sessions/fdbv1.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_alpaca 2 config/eval/sessions/alpaca.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_triviaqa 2 config/eval/sessions/triviaqa.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_webq 2 config/eval/sessions/webq.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b
+slm slm_bba 1 config/eval/sessions/bba.jsonl ar,after_audio_lookup,after_audio_recycle,after_audio_lookahead,self_silence_h_b

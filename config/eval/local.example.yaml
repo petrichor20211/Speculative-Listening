@@ -1,0 +1,25 @@
+# Copy to config/eval/local.yaml (untracked) and fill in. An environment variable SPECLISTEN_<KEY> overrides a key.
+
+# Streaming SLM (weights released separately)
+duplex_repo: /path/to/Duplex                            # its model code (the ``src`` package), put on PYTHONPATH by run.sh
+slm_checkpoint: /path/to/streaming-slm.ckpt
+slm_export: /path/to/streaming_slm_export               # tokenizer, for the response-quality judge
+
+# MiniCPM-o-based targets, each through its released runtime
+venus_model: /path/to/Realtime-Venus/Realtime-Venus-Audio
+venus_repo: /path/to/Realtime-Venus                     # demos/ (turn-ending control)
+gander_thinker: /path/to/Gander/thinker
+gander_repo: /path/to/Omni-Interaction-Agent/minicpm_ft # the ``mcpmft`` runtime
+lws_repo: /path/to/lws_demo                             # the ``triplex_runtime`` demo
+lws_assets: /path/to/lws-triplex-demo                   # its checkpoint, tokenizer and profiles
+minicpmo_base: /path/to/MiniCPM-o-4_5
+
+# Data and outputs
+fdb_data: /path/to/Full-Duplex-Bench                    # v1 / v1.5 / v3 as downloaded (session builder)
+sessions: /path/to/sessions                             # replay audio <task>/<id>.wav, built by speclisten.bench.sessions
+outputs: /path/to/outputs                               # run directories
+
+# Interpreters: the three runtimes need different stacks (envs/)
+python_duplex: /path/to/envs/duplex/bin/python          # Streaming SLM
+python_venus: /path/to/envs/realtime-venus/bin/python   # Gander, Realtime-Venus
+python_lws: /path/to/lws_demo/.venv/bin/python          # LWS
